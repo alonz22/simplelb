@@ -1,5 +1,7 @@
 # SimpleLB Load Balancer Service
-SimpleLB Logo
+
+![logo](https://github.com/alonz22/simplelb/assets/72250573/ccdc9c2b-e703-4838-b602-aef2bbc7abb2)
+
 
 SimpleLB is a lightweight and efficient load balancer service designed to balance traffic on Layer 4 (Transport Layer) for your web applications or services. It provides essential features to manage traffic effectively and optimize the performance of your server infrastructure.
 

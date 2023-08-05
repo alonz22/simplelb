@@ -1,7 +1,8 @@
 # SimpleLB Load Balancer Service
 
 
-![image](https://github.com/alonz22/simplelb/assets/72250573/fb35647b-c758-4e50-ab5f-dafc36fcbd0f)
+
+![logo](https://github.com/alonz22/simplelb/assets/72250573/92189780-7664-4fcd-a47f-06d078690db8)
 
 
 

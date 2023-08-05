@@ -50,7 +50,36 @@ Review the access logs located at /var/log/simplelb_access.log to monitor user r
 Log file contents is human readable and easy to understand.
 Configuration
 The config.ini file is the heart of SimpleLB's configuration. It provides options to customize the load balancer behavior, define SSL certificate paths, set penalty thresholds, and more. Refer to the comments in the file for detailed explanations of each option.
+## Modifying the config file:
+The config file, located at /etc/simplelb, contains a simple configuration syntax, as the following:
+```
+[frontend]
 
+method = leastconn
+frontend_ip = 0.0.0.0
+frontend_port = 8080
+#ssl_cert_file = /etc/haproxy/ssl/your-cert.com.pem
+#ssl_key_file = /etc/haproxy/ssl/your-key.com.key
+rate_limit_period = 2
+rate_limit_max_requests = 8
+penalty_duration = 10
+
+
+[backend_servers]
+server1 = 192.168.33.12:80
+server2 = 192.168.33.13:80
+
+[server1]
+stickey_session_time = 15
+active = yes
+
+[server2]
+stickey_session_time = 120
+active = no
+
+
+
+```
 ## Contributing
 We welcome contributions from the community to make SimpleLB even better. If you encounter any issues, have feature requests, or want to contribute code, please check our Contributing Guidelines and open an issue or pull request.
 

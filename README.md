@@ -19,25 +19,6 @@ Enable sticky session support to ensure that client requests from the same IP ad
 
 ## Request Logging
 SimpleLB offers detailed request logging, helping you monitor traffic patterns, analyze user behavior, and troubleshoot any issues that may arise. Log files include client IP addresses, requested URLs, response codes, and more.
-```
-
-2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 goes to backend server: server1
-2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 goes to backend server: server1
-2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 for path: /favicon.ico
-2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 for path: /favicon.ico
-2023-08-05 10:22:59,034 - INFO - Accepted HTTP connection from 10.20.50.60:51842
-2023-08-05 10:22:59,034 - INFO - Accepted HTTP connection from 10.20.50.60:51842
-2023-08-05 10:22:59,034 - INFO - Request from 185.160.28.2 goes to backend server: server2
-2023-08-05 10:22:59,034 - INFO - Request from 185.160.28.2 goes to backend server: server2
-2023-08-05 10:22:59,034 - INFO - Request from 10.20.50.60 for path: /login.aspx
-2023-08-05 10:22:59,034 - INFO - Request from 10.20.50.60 for path: /login.aspx
-2023-08-05 10:22:59,868 - INFO - Accepted HTTP connection from 185.160.28.21:51843
-2023-08-05 10:22:59,868 - INFO - Accepted HTTP connection from 185.160.28.21:51843
-2023-08-05 10:22:59,868 - INFO - Request from 185.160.28.21 goes to backend server: server2
-2023-08-05 10:22:59,868 - INFO - Request from 185.160.28.21 goes to backend server: server2
-
-
-```
 
 ## Limitations
 Single Frontend and Backend (Current Limitation)
@@ -55,13 +36,19 @@ To use SimpleLB Load Balancer Service, follow these steps:
 
 ## Prerequisites:
 
-Ensure you have Python 3.x installed on your server.
-Install any necessary dependencies listed in the project's requirements.
+1.Operating System: The service is compatible with Red Hat Enterprise Linux (RHEL) and CentOS for Red Hat-based systems, as well as Debian and Ubuntu for Debian-based systems.
+
+2.Python 3: SimpleLB requires Python 3.x to be installed on the system, which is available by default on most modern Linux distributions.
+
+3.Configuration File: The service relies on a configuration file (config.ini) located in ```/etc/simplelb/``` that allows users to customize load balancer settings, SSL certificates, and penalty thresholds.
+
+4.Permissions: Administrative privileges (root access or sudo) are necessary to perform system-level tasks such as creating directories, copying files to system directories, and starting/stopping services.
+
 Download and Setup:
 
 Clone this repository to your server.
 run ``` ./install.sh```
-Modify the config.ini file in the /etc/simplelb/ directory to configure your load balancer settings, SSL certificates, and penalty thresholds.
+Modify the ```config.ini``` file in the ```/etc/simplelb/``` directory to configure your load balancer settings, SSL certificates, and penalty thresholds.
 Run the Load Balancer:
 
 
@@ -69,10 +56,33 @@ Run the Load Balancer:
 
 Review the access logs located at /var/log/simplelb_access.log to monitor user requests and server responses.
 Log file contents is human readable and easy to understand.
-Configuration
+For Example:
+
+
+```
+
+2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 goes to backend server: server1
+2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 goes to backend server: server1
+2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 for path: /favicon.ico
+2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 for path: /favicon.ico
+2023-08-05 10:22:59,034 - INFO - Accepted HTTP connection from 10.20.50.60:51842
+2023-08-05 10:22:59,034 - INFO - Accepted HTTP connection from 10.20.50.60:51842
+2023-08-05 10:22:59,034 - INFO - Request from 185.160.28.2 goes to backend server: server2
+2023-08-05 10:22:59,034 - INFO - Request from 185.160.28.2 goes to backend server: server2
+2023-08-05 10:22:59,034 - INFO - Request from 10.20.50.60 for path: /login.aspx
+2023-08-05 10:22:59,034 - INFO - Request from 10.20.50.60 for path: /login.aspx
+2023-08-05 10:22:59,868 - INFO - Accepted HTTP connection from 185.160.28.21:51843
+2023-08-05 10:22:59,868 - INFO - Accepted HTTP connection from 185.160.28.21:51843
+2023-08-05 10:22:59,868 - INFO - Request from 185.160.28.21 goes to backend server: server2
+2023-08-05 10:22:59,868 - INFO - Request from 185.160.28.21 goes to backend server: server2
+
+
+```
+
+## Configuration
 The config.ini file is the heart of SimpleLB's configuration. It provides options to customize the load balancer behavior, define SSL certificate paths, set penalty thresholds, and more. Refer to the comments in the file for detailed explanations of each option.
 ## Modifying the config file:
-The config file, located at /etc/simplelb, contains a simple configuration syntax, as the following:
+The config file, located at ```/etc/simplelb/```, contains a simple configuration syntax, as the following:
 ```
 [frontend]
 
@@ -152,4 +162,4 @@ We would like to express our gratitude to the open-source community for their co
 
 Thank you for choosing SimpleLB Load Balancer Service!
 
-SimpleLB logo designed by Alon Zur.
+

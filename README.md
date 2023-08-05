@@ -19,6 +19,25 @@ Enable sticky session support to ensure that client requests from the same IP ad
 
 ## Request Logging
 SimpleLB offers detailed request logging, helping you monitor traffic patterns, analyze user behavior, and troubleshoot any issues that may arise. Log files include client IP addresses, requested URLs, response codes, and more.
+```
+
+2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 goes to backend server: server1
+2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 goes to backend server: server1
+2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 for path: /favicon.ico
+2023-08-05 10:16:59,014 - INFO - Request from 10.20.50.60 for path: /favicon.ico
+2023-08-05 10:22:59,034 - INFO - Accepted HTTP connection from 10.20.50.60:51842
+2023-08-05 10:22:59,034 - INFO - Accepted HTTP connection from 10.20.50.60:51842
+2023-08-05 10:22:59,034 - INFO - Request from 185.160.28.2 goes to backend server: server2
+2023-08-05 10:22:59,034 - INFO - Request from 185.160.28.2 goes to backend server: server2
+2023-08-05 10:22:59,034 - INFO - Request from 10.20.50.60 for path: /login.aspx
+2023-08-05 10:22:59,034 - INFO - Request from 10.20.50.60 for path: /login.aspx
+2023-08-05 10:22:59,868 - INFO - Accepted HTTP connection from 185.160.28.21:51843
+2023-08-05 10:22:59,868 - INFO - Accepted HTTP connection from 185.160.28.21:51843
+2023-08-05 10:22:59,868 - INFO - Request from 185.160.28.21 goes to backend server: server2
+2023-08-05 10:22:59,868 - INFO - Request from 185.160.28.21 goes to backend server: server2
+
+
+```
 
 ## Limitations
 Single Frontend and Backend (Current Limitation)

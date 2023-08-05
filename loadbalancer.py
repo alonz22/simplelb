@@ -7,7 +7,7 @@ import http.client
 import logging
 from logging.handlers import RotatingFileHandler
 
-log_file = "/var/log/simplelb.log"
+log_file = "/var/log/simplelb_access.log"
 logging.basicConfig(filename=log_file, level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 max_log_size = 10 * 1024 * 1024  # 10 MB in bytes

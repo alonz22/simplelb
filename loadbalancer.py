@@ -121,16 +121,12 @@ def sticky_session_balancer(client_ip):
 
     return backend_server_name, backend_servers[backend_server_name]
 
-#RATE_LIMIT_PERIOD = 2  # Rate limit period in seconds
-#RATE_LIMIT_MAX_REQUESTS = 6  # Maximum allowed requests in the rate limit period
-#PENALTY_DURATION = 5  # Penalty duration in seconds
 
 # Dictionary to track the request timestamps for each client IP
 client_request_times = {}
 
 # Set to track IP addresses under penalty (Forbidden) and their penalty expiration times
 penalty_ips = {}
-
 
 
 def handle_client(client_socket, client_ip):

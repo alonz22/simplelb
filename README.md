@@ -85,6 +85,37 @@ active = no
 
 
 ```
+1.method:
+there are currently 2 load balancing methods:
+* leastconn
+* round_robin
+please make sure that the syntax is correct following to the above mentioned.
+
+2.rate_limit_period:
+this measure is in seconds, and determins the amount of time in seconds allowed for the maximum requests.
+
+3.rate_limit_max_requests:
+  The amount of allowed requests per the rate_limit_period.
+  
+4.penalty_duration:
+Determine for how long you would like to ban the suspicious ip (also in seconds).
+
+5.backend servers section:
+It is possible to add more servers to the backend pool, just watch for syntax error, otherwise the service will not start as expected.
+its prefix should start with 'server', for instace: ```server3 = 192.168.33.14:80```
+
+6.stickey_session_time:
+This property allows session stickeyness, and determines for how long your requests will be redirected
+to the first backend server that served the request.
+
+7.active:
+May be disabled by switching "yes" to "no". This property will disable or will activate the session persistence.
+
+By enabling sticky session in load balancing, applications with logins can leverage 
+session persistence, enhance user experience, and maintain seamless session-based 
+operations, resulting in improved application performance and customer satisfaction.
+
+
 ## Contributing
 We welcome contributions from the community to make SimpleLB even better. If you encounter any issues, have feature requests, or want to contribute code, please check our Contributing Guidelines and open an issue or pull request.
 

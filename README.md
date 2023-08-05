@@ -46,7 +46,8 @@ Run the Load Balancer:
 
 ## Logging:
 
-Review the access logs located at /var/log/simplelb.log to monitor user requests and server responses.
+Review the access logs located at /var/log/simplelb_access.log to monitor user requests and server responses.
+Log file contents is human readable and easy to understand.
 Configuration
 The config.ini file is the heart of SimpleLB's configuration. It provides options to customize the load balancer behavior, define SSL certificate paths, set penalty thresholds, and more. Refer to the comments in the file for detailed explanations of each option.
 

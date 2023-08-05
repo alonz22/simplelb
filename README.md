@@ -40,14 +40,14 @@ Install any necessary dependencies listed in the project's requirements.
 Download and Setup:
 
 Clone this repository to your server.
-```run ./install.sh```
+run ``` ./install.sh```
 Modify the config.ini file in the /etc/simplelb/ directory to configure your load balancer settings, SSL certificates, and penalty thresholds.
 Run the Load Balancer:
 
-Start the load balancer service by running the lb12.py script using Python 3.
+
 ## Logging:
 
-Review the access logs located at /var/log/simplelb_access.log to monitor user requests and server responses.
+Review the access logs located at /var/log/simplelb.log to monitor user requests and server responses.
 Configuration
 The config.ini file is the heart of SimpleLB's configuration. It provides options to customize the load balancer behavior, define SSL certificate paths, set penalty thresholds, and more. Refer to the comments in the file for detailed explanations of each option.
 
@@ -68,8 +68,6 @@ Use of SimpleLB Load Balancer Service is at your own risk. The software may not 
 
 ## Acknowledgments
 We would like to express our gratitude to the open-source community for their continuous support and contributions.
-
-For questions, feedback, or support, please contact us at support@example.com.
 
 Thank you for choosing SimpleLB Load Balancer Service!
 

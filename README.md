@@ -4,7 +4,6 @@ SimpleLB Logo
 SimpleLB is a lightweight and efficient load balancer service designed to balance traffic on Layer 4 (Transport Layer) for your web applications or services. It provides essential features to manage traffic effectively and optimize the performance of your server infrastructure.
 
 # Features
-Layer 4 Load Balancing
 SimpleLB focuses on Layer 4 load balancing, allowing you to distribute incoming network traffic across multiple backend servers based on various algorithms such as round-robin, least connections, or IP hash.
 
 ## SSL Certificate Support
